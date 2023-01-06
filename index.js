@@ -23,6 +23,7 @@ class Book {
       // created text element to center text in book
       let bookTextEle = document.createElement("div"); 
       bookTextEle.classList.add("bookText")
+      rectangle.setAttribute("id", this.title)
       rectangle.append(bookTextEle);
       
       // add color to each book's background
@@ -34,6 +35,7 @@ class Book {
       starContainer.classList.add("btn-primary");
       starContainer.setAttribute("type", "button");
       starContainer.innerText = "Favorite!"
+      starContainer.setAttribute("id", "starContainer")
       rectangle.append(starContainer)
 
 
@@ -92,9 +94,6 @@ bookData.map(loopThrough);
 // book2.Render();
 
 
-// letting user add books
-
-let newBook = {};
 document.querySelector("#submit").addEventListener("click", function (){
   let newTitle = document.querySelector('#Title').value;
   let newAuthor = document.querySelector('#Author').value;
@@ -107,20 +106,21 @@ document.querySelector("#submit").addEventListener("click", function (){
 })
 
 /*
-1. create array that holds all favorites
-2. create DOM element that symbolizes favorited books...
-3. figure out how to add star to element
+1. create array that holds all favorites ✅
+2. create DOM element that symbolizes favorited books... ✅
+3. figure out how to add star to element ✅
     - CSS way?
-4. add eventlistener to the button
+4. add eventlistener to the button✅
     - when clicked, add to favoritesArr (use push)
 */
 
 //create array that holds all favorites
 const favoriteArr = [];
 
-//create DOM element that symbolizes favorited books...
-let favoriteSection = document.querySelector("#favoriteSection");
-let favButton = document.createElement("button");
-// favButton.
+// when favorite is clicked... 
+let starContainer = document.querySelector("#starContainer")
+starContainer.addEventListener("click", function(){
+  favoriteArr.push()
+})
 
 
