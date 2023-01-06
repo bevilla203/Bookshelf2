@@ -1,0 +1,33 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+body{
+    background-image: url("whiteWoodDesk.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.bookCard{
+
+    margin: auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    height: 550px;
+    width: 300px;
+    border: 3px solid black;
+    padding: 50px;
+    margin-top: 20px;
+}
+.bookText{
+    margin-top: 20px;
+}
+#bookSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 300px;
+}
