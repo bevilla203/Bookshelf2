@@ -1,16 +1,20 @@
 * {
+    /* sets a default font and font-family for everything on the page */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
 }
+
 body{
+    /* added background so it seems like a desk */
     background-image: url("whiteWoodDesk.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-.bookCard{
 
+.bookCard{
+    /* A bookCard represents each book */
     margin: auto;
     display: block;
     align-items: center;
@@ -24,7 +28,9 @@ body{
 .bookText{
     margin-top: 20px;
 }
+
 #bookSection{
+    /* This book section is a div that houses all the displayed books */
     display: flex;
     align-items: center;
     justify-content: center;

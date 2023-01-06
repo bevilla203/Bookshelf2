@@ -28,6 +28,15 @@ class Book {
       // add color to each book's background
       rectangle.style.backgroundColor = randomColorBG();
 
+      // create button within each book
+      let starContainer = document.createElement("button");
+      starContainer.classList.add("btn");
+      starContainer.classList.add("btn-primary");
+      starContainer.setAttribute("type", "button");
+      starContainer.innerText = "Favorite!"
+      rectangle.append(starContainer)
+
+
       // added innertext to book face
       bookTextEle.innerText = 
       `${this.title}
@@ -97,9 +106,21 @@ document.querySelector("#submit").addEventListener("click", function (){
   document.querySelector("#newBookForm").reset();
 })
 
+/*
+1. create array that holds all favorites
+2. create DOM element that symbolizes favorited books...
+3. figure out how to add star to element
+    - CSS way?
+4. add eventlistener to the button
+    - when clicked, add to favoritesArr (use push)
+*/
 
+//create array that holds all favorites
+const favoriteArr = [];
 
-
-
+//create DOM element that symbolizes favorited books...
+let favoriteSection = document.querySelector("#favoriteSection");
+let favButton = document.createElement("button");
+// favButton.
 
 
