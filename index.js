@@ -55,22 +55,36 @@ class Bookshelf {
 // create eternal bookshelf (holds all books ever created)
 let eternalBookshelf = new Bookshelf();
 
-//loop through bookData
-for (let i = 0; i < bookData.length; i++){
-  let currEle = bookData[i];
-  // create book element that will transform given object into "Book"
+
+// I used .map to render all the books within book-data.js
+let loopThrough = (currEle) => {
   let currBook = new Book(currEle.author, currEle.language, currEle.subject, currEle.title);
-  // add book to webpage
   currBook.Render();
-  // add book to bookshelf
-  eternalBookshelf.Add(currBook); // it worked!!!! ✅
+  eternalBookshelf.Add(currBook);
 }
+
+//loop through bookData
+bookData.map(loopThrough);
+
+
+// ALTERNATIVE WAY TO LOOP THROUGH BOOKDATA
+// for (let i = 0; i < bookData.length; i++){
+//   let currEle = bookData[i];
+//   // create book element that will transform given object into "Book"
+//   let currBook = new Book(currEle.author, currEle.language, currEle.subject, currEle.title);
+//   // add book to webpage
+//   currBook.Render();
+//   // add book to bookshelf
+//   eternalBookshelf.Add(currBook); // it worked!!!! ✅
+// }
 // adding book to same shelf
-let book2 = new Book(["Clear, James"], "en", ["self-help", "non-fiction"], "Atomic Habits");
-eternalBookshelf.Add(book2); //✅
-book2.Render();
+// let book2 = new Book(["Clear, James"], "en", ["self-help", "non-fiction"], "Atomic Habits");
+// eternalBookshelf.Add(book2); //✅
+// book2.Render();
+
 
 // letting user add books
+
 let newBook = {};
 document.querySelector("#submit").addEventListener("click", function (){
   let newTitle = document.querySelector('#Title').value;
@@ -82,7 +96,6 @@ document.querySelector("#submit").addEventListener("click", function (){
   newBook.Render();
   document.querySelector("#newBookForm").reset();
 })
-// how do I create error if not all fields are typed in?
 
 
 
