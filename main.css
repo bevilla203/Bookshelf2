@@ -1,24 +1,45 @@
 * {
     /* sets a default font and font-family for everything on the page */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 15px;
+    list-style: none;
+}
+body{
+    background-image: url("whiteWoodDesk.jpg");
 }
 
-body{
+main{
+
+
     /* added background so it seems like a desk */
-    background-image: url("whiteWoodDesk.jpg");
     display: flex;
+    flex-direction: column;
+    /* flex-wrap allows the  form to have its own space at the top */
+    /* flex-wrap: wrap;  */
+}
+#newBookForm{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+
+}
+h1{
+    text-align: center;
+}
+.commentSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .bookCard{
     /* A bookCard represents each book */
     margin: auto;
-    display: block;
-    align-items: center;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    /* text-align centers words to the center of the book */
+    text-align:center;
     height: 550px;
     width: 300px;
     border: 3px solid black;
@@ -32,8 +53,11 @@ body{
 #bookSection{
     /* This book section is a div that houses all the displayed books */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 300px;
+    flex-direction: column;
+    font-size: 15px;
+
+}
+.classRemaining{
+    /* for some reason, the text is never aligned!!!!!! */
+    text-align: right;
 }
