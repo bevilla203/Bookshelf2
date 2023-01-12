@@ -64,6 +64,7 @@ class Book {
       commentHistory.style.backgroundColor = "white";
       commentHistory.style.minHeight = "100px";
       commentHistory.style.marginTop = "50px";
+      commentHistory.style.display = "none";
 
       // creating comment to be added
       let comment = document.createElement("textarea");
@@ -103,6 +104,7 @@ class Book {
 
 
       const buttonPressed = e => {
+        commentHistory.style.display = "list-item";
         let bookID = e.target.id; // gives unique ID
         let commentToAdd = document.querySelector(`#comment${bookID}`).value;
         let newLi = document.createElement("li");
