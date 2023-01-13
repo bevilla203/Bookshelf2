@@ -73,6 +73,7 @@ class Book {
       comment.classList.add("w-50");
       comment.classList.add("form-control");
       comment.style.marginTop = "10px"
+      comment.style.display = "none";
 
       // creating addCommentButton button for each new comment
       let addCommentButton = document.createElement("button");
@@ -84,6 +85,7 @@ class Book {
 
       // adds visible dynamic counter for charCount
       let countRemaining = document.createElement("div");
+      countRemaining.style.display = "none";
       countRemaining.classList.add("countRemaining")
       countRemaining.style.textAlign = "right";
       countRemaining.innerText = "280 characters remaining";
@@ -97,6 +99,7 @@ class Book {
           countRemaining.innerText = `${remaining} characters remaining`; // change text dynamically
           countRemaining.style.color = color;
       });
+      
       this.id = this.id++;
       // adds book to the top of the section
       div.prepend(rectangle, commentSection);
@@ -105,11 +108,14 @@ class Book {
 
       const buttonPressed = e => {
         commentHistory.style.display = "list-item";
+        comment.style.display = "flex";
+        countRemaining.style.display = "flex";
         let bookID = e.target.id; // gives unique ID
         let commentToAdd = document.querySelector(`#comment${bookID}`).value;
         let newLi = document.createElement("li");
         newLi.innerText = commentToAdd; // finally adds text as a comment!!!!
         let commentSection = document.querySelector(`#commentHistory${bookID}`);
+        console.log(commentSection);
         commentSection.append(newLi)
         commentToAdd = document.querySelector(`#comment${bookID}`);
         commentToAdd.value = '';
